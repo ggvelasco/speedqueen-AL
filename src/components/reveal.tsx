@@ -21,6 +21,7 @@ export function Reveal({
 
   return (
     <motion.div
+      {...({} as any)}
       className={className}
       initial={prefersReducedMotion ? false : { opacity: 0, y }}
       whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
