@@ -9,7 +9,6 @@ import {
   Smartphone,
   Sparkles,
   Star,
-  WashingMachine,
 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
@@ -17,29 +16,31 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Reveal } from "@/components/reveal";
 import { SoapBubbles } from "@/components/soap-bubbles";
+import { Highlight } from "@/components/ui/hero-highlight";
+import Image from "next/image";
 
 const benefits = [
   {
     icon: Clock3,
     title: "Prazo recorde",
-    copy: "O hospede sai as 11h, o proximo entra as 15h? Maquinas de grande capacidade resolvem a virada do enxoval a tempo.",
+    copy: "O hóspede sai às 11h e o próximo entra às 15h? Máquinas de grande capacidade resolvem a troca do enxoval a tempo.",
   },
   {
     icon: Sparkles,
     title: "Qualidade de hotelaria",
-    copy: "Toalhas felpudas e lencois brancos com selos de qualidade e dosagem automatica de produtos profissionais.",
+    copy: "Toalhas felpudas e lençóis brancos com selos de qualidade e dosagem automática de produtos profissionais.",
   },
   {
     icon: ReceiptText,
-    title: "Gestao financeira simples",
-    copy: "Faturas simplificadas com NIF para lancar as despesas do seu Alojamento Local sem burocracia.",
+    title: "Gestão financeira simples",
+    copy: "Faturas simplificadas com NIF para lançar as despesas do seu Alojamento Local sem burocracia.",
   },
 ];
 
 const appAdvantages = [
-  "Ativacao das maquinas pelo telemovel",
+  "Ativação das máquinas pelo telemóvel",
   "Controlo de gastos por colaborador",
-  "Historico de lavagens para acompanhar despesas",
+  "Histórico de lavagens para acompanhar despesas",
   "Uso recorrente sem depender de moedas",
 ];
 
@@ -70,11 +71,17 @@ export default function Home() {
         <div className="relative z-10 mx-auto grid min-h-[100svh] w-full max-w-7xl items-end gap-12 px-5 pb-10 pt-10 sm:px-8 lg:min-h-[92vh] lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:px-10 lg:pb-14">
           <Reveal className="max-w-3xl rounded-lg border border-white/14 bg-[#071f26]/56 p-4 shadow-2xl shadow-black/20 backdrop-blur-[3px] sm:p-6 lg:bg-[#071f26]/48 lg:p-7 lg:backdrop-blur-[4px]">
             <div className="mb-8 flex items-center gap-3">
-              <div className="flex size-11 items-center justify-center rounded-lg bg-white/14 text-white ring-1 ring-white/22">
-                <WashingMachine className="size-5" aria-hidden="true" />
+              <div className="flex size-11 items-center justify-center overflow-hidden rounded-lg bg-white/14 ring-1 ring-white/22">
+                <Image
+                  src="/logo.png"
+                  alt="Logo Speed Queen Gambelas"
+                  width={44}
+                  height={44}
+                  className="h-full w-full object-cover"
+                />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#f2bf4d]">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#ed4e22]">
                   Speed Queen Gambelas
                 </p>
                 <p className="text-sm text-white/78">
@@ -88,15 +95,21 @@ export default function Home() {
               Gambelas e arredores
             </Badge>
 
-            <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-7xl">
-              Check-ins perfeitos exigem enxovais impecaveis. Nao perca tempo
-              lavando em casa.
+            <h1 className="max-w-4xl text-3xl font-semibold leading-[1.04] tracking-normal text-white sm:text-6xl lg:text-5xl">
+              Check-ins perfeitos exigem enxovais{" "}
+              <Highlight className="text-white leading-[1.2]">
+                impecáveis
+              </Highlight>
+              .
+              <br />
+              <br />
+              Não perca tempo a lavar em casa.
             </h1>
 
             <p className="mt-6 max-w-2xl text-lg leading-8 text-white/84 sm:text-xl">
               A lavandaria parceira do seu Alojamento Local em Gambelas. Lave e
-              seque dezenas de lencois e toalhas em menos de 1 hora com
-              qualidade de hotel.
+              seque dezenas de lençóis e toalhas em menos de 1 hora com
+              qualidade hoteleira.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -107,7 +120,7 @@ export default function Home() {
               >
                 <a href="#contacto">
                   <Hotel className="size-4" aria-hidden="true" />
-                  Descobrir condicoes para AL
+                  Descubra condições para AL
                   <ArrowRight className="size-4" aria-hidden="true" />
                 </a>
               </Button>
@@ -124,7 +137,7 @@ export default function Home() {
             <div className="mt-10 grid max-w-2xl grid-cols-3 gap-2 text-sm text-white/78 sm:gap-3">
               <div className="rounded-lg border border-white/18 bg-white/12 p-3 backdrop-blur">
                 <strong className="block text-2xl text-white">1h</strong>
-                lavagem e secagem rapidas
+                lavagem e secagem rápidas
               </div>
               <div className="rounded-lg border border-white/18 bg-white/12 p-3 backdrop-blur">
                 <strong className="block text-2xl text-white">5</strong>
@@ -132,7 +145,7 @@ export default function Home() {
               </div>
               <div className="rounded-lg border border-white/18 bg-white/12 p-3 backdrop-blur">
                 <strong className="block text-2xl text-white">NIF</strong>
-                faturacao para AL
+                faturação para AL
               </div>
             </div>
           </Reveal>
@@ -147,15 +160,18 @@ export default function Home() {
                 loop
                 playsInline
                 poster="/hero-lavandaria-al.svg"
-                aria-label="Video da lavandaria Speed Queen em Gambelas, mostrando maquinas, ambiente e conveniencias"
+                aria-label="Vídeo da lavandaria Speed Queen em Gambelas, a mostrar máquinas, o espaço e conveniências"
               >
                 <source src="/videos/teaser-lp3.mp4" type="video/mp4" />
               </video>
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(16,47,56,0.02),rgba(16,47,56,0.28))]" />
               <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center gap-2 rounded-lg border border-white/25 bg-white/88 p-3 text-sm font-medium text-[#173f4a] shadow-lg backdrop-blur">
-                <CheckCircle2 className="size-4 text-[#1d8a73]" aria-hidden="true" />
-                Maquinas de grande capacidade, ambiente cuidado e conveniencias
-                para viradas rapidas.
+                <CheckCircle2
+                  className="size-4 text-[#1d8a73]"
+                  aria-hidden="true"
+                />
+                Máquinas de grande capacidade, espaço cuidado e conveniências
+                para trocas rápidas de enxoval.
               </div>
             </div>
           </Reveal>
@@ -167,7 +183,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
           <Reveal className="max-w-3xl">
             <Badge variant="outline" className="rounded-lg border-[#d3dfdd]">
-              Reviews 5 estrelas
+              Avaliações 5 estrelas
             </Badge>
             <h2 className="mt-4 text-3xl font-semibold tracking-normal text-[#102f38] sm:text-5xl">
               O enxoval deixa de ser o gargalo entre check-out e check-in.
@@ -201,10 +217,10 @@ export default function Home() {
           <Reveal>
             <Badge className="rounded-lg bg-[#f2bf4d] text-[#173f4a]">
               <PawPrint className="size-3.5" aria-hidden="true" />
-              Pet Friendly
+              Pet-friendly
             </Badge>
             <h2 className="mt-5 text-3xl font-semibold tracking-normal sm:text-5xl">
-              Um detalhe extra para anuncios que recebem pets.
+              Um detalhe extra para anúncios que recebem animais de estimação.
             </h2>
           </Reveal>
           <Reveal
@@ -212,10 +228,10 @@ export default function Home() {
             delay={0.1}
           >
             <p className="text-xl leading-9 text-[#eaf6f4]">
-              Seu AL e Pet Friendly? Ofereca mantas limpas para os pets dos seus
-              hospedes. Lave-as no nosso Pet Corner exclusivo e nao arrisque
-              misturar pelos com o enxoval principal. Um diferencial que gera
-              reviews incriveis.
+              O seu Alojamento Local é pet-friendly? Ofereça mantas limpas para
+              os animais dos seus hóspedes. Lave-as no nosso Pet Corner
+              exclusivo e não arrisque misturar pêlos com o enxoval principal.
+              Um diferencial que gera avaliações incríveis.
             </p>
           </Reveal>
         </div>
@@ -228,12 +244,12 @@ export default function Home() {
               Speed Queen App
             </Badge>
             <h2 className="mt-4 text-3xl font-semibold tracking-normal text-[#102f38] sm:text-5xl">
-              A conta do AL funciona para o anfitriao e para a equipa de
+              A conta do AL funciona para o anfitrião e para a equipa de
               limpeza.
             </h2>
             <p className="mt-5 text-lg leading-8 text-[#557077]">
-              Controle os gastos e ative maquinas diretamente pelo celular,
-              mesmo quando a operacao esta nas maos da funcionaria da limpeza.
+              Gerir os gastos e ativar máquinas diretamente pelo telemóvel,
+              mesmo quando a operação está nas mãos da colaboradora da limpeza.
             </p>
           </Reveal>
 
@@ -266,11 +282,11 @@ export default function Home() {
               ))}
             </div>
             <blockquote className="mt-6 text-2xl font-semibold leading-9">
-              &ldquo;Desde que comecei a usar a Speed Queen, a gestao das roupas
+              &ldquo;Desde que comecei a usar a Speed Queen, a gestão das roupas
               de cama deixou de ser um pesadelo.&rdquo;
             </blockquote>
             <p className="mt-5 text-sm font-medium uppercase tracking-[0.18em]">
-              Anfitriao de AL em Gambelas
+              Anfitrião de AL em Gambelas
             </p>
           </Reveal>
 
@@ -285,7 +301,7 @@ export default function Home() {
               </p>
             </div>
             <h2 className="mt-4 text-3xl font-semibold tracking-normal text-[#102f38] sm:text-4xl">
-              Garanta condicoes para uso recorrente do seu Alojamento Local.
+              Garanta condições para uso recorrente do seu Alojamento Local.
             </h2>
 
             <form className="mt-8 grid gap-4">
@@ -297,25 +313,25 @@ export default function Home() {
                 />
                 <input
                   className="h-12 rounded-lg border border-[#cbdcda] bg-white px-4 text-base outline-none transition focus:border-[#1d6f7d] focus:ring-4 focus:ring-[#1d6f7d]/10"
-                  placeholder="Telemovel ou WhatsApp"
-                  aria-label="Telemovel ou WhatsApp"
+                  placeholder="Telemóvel ou WhatsApp"
+                  aria-label="Telemóvel ou WhatsApp"
                 />
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <input
                   className="h-12 rounded-lg border border-[#cbdcda] bg-white px-4 text-base outline-none transition focus:border-[#1d6f7d] focus:ring-4 focus:ring-[#1d6f7d]/10"
-                  placeholder="Nome do AL"
+                  placeholder="Nome do Alojamento Local"
                   aria-label="Nome do Alojamento Local"
                 />
                 <input
                   className="h-12 rounded-lg border border-[#cbdcda] bg-white px-4 text-base outline-none transition focus:border-[#1d6f7d] focus:ring-4 focus:ring-[#1d6f7d]/10"
-                  placeholder="Viradas por semana"
-                  aria-label="Viradas por semana"
+                  placeholder="Trocas por semana"
+                  aria-label="Trocas por semana"
                 />
               </div>
               <textarea
                 className="min-h-28 rounded-lg border border-[#cbdcda] bg-white px-4 py-3 text-base outline-none transition focus:border-[#1d6f7d] focus:ring-4 focus:ring-[#1d6f7d]/10"
-                placeholder="Quantos jogos de lencois e toalhas costuma lavar por virada?"
+                placeholder="Quantos jogos de lençóis e toalhas costuma lavar por troca?"
                 aria-label="Mensagem"
               />
               <Button
